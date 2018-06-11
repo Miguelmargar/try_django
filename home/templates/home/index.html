@@ -1,13 +1,15 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-<h1>Welcome to Django</h1>
 
-
+{% for author in authors %}
+<h4>{{ author.name }}</h4>
 <ul>
-    {% for book in books %}
-    <li>{{ book.name }}</li>
-    {% endfor %}
+   {% for book in author.books.all %}
+       <li>{{ book.name }}</li>    
+   {% endfor %}
 </ul>
+
+{% endfor %}
 
 {% endblock content %}
