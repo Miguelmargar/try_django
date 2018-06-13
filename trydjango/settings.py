@@ -58,7 +58,7 @@ ROOT_URLCONF = 'trydjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')], # the latter has to be included and it is not automatically in - it is for the reseting of password functionality
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
